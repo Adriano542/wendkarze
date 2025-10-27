@@ -1,18 +1,16 @@
-/* === OGÓLNE USTAWIENIA === */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #b3e5fc; /* błękitne tło */
+  background-color: #b3e5fc; 
   box-sizing: border-box;
 }
 
-/* === NAGŁÓWEK === */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap; /* pozwala elementom przechodzić do nowej linii */
+  flex-wrap: wrap;
   background-color: #0077b6;
   color: white;
   padding: 15px 5%;
@@ -43,22 +41,20 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* === SEKCJE === */
 .section {
-  background-color: #e1f5fe; /* jasny błękit */
+  background-color: #e1f5fe;
   width: 100%;
   padding: 40px 5%;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   box-sizing: border-box;
 }
 
-/* === SEKCJA GŁÓWNA === */
 .main-content {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
-  flex-wrap: wrap; /* dzięki temu przy zwężaniu ekranu obraz i tekst ułożą się pionowo */
+  flex-wrap: wrap;
 }
 
 .main-content img {
@@ -68,18 +64,17 @@ nav a:hover {
   flex: 1 1 300px;
 }
 
-/* === BLOK SPRZĘTU === */
 .sprzet {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   text-align: center;
-  flex-wrap: wrap; /* elementy ładnie się zawijają */
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .sprzet-item {
-  flex: 1 1 250px; /* rośnie lub maleje w zależności od szerokości okna */
+  flex: 1 1 250px;
   max-width: 300px;
 }
 
@@ -90,7 +85,7 @@ nav a:hover {
 
 .sprzet-item .box {
   width: 100%;
-  aspect-ratio: 1 / 1; /* kwadrat */
+  aspect-ratio: 1 / 1; 
   border: 2px solid #01579b;
   border-radius: 8px;
   background-color: #bbdefb;
@@ -112,7 +107,6 @@ nav a:hover {
   transform: scale(1.08);
 }
 
-/* === GALERIA === */
 .gallery {
   display: flex;
   justify-content: center;
@@ -122,13 +116,65 @@ nav a:hover {
 
 .gallery div {
   background-color: #81d4fa;
-  width: 200px;
-  height: 120px;
+  width: 220px;
+  height: 150px;
   border: 2px solid #0077b6;
   border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* === STOPKA === */
+.gallery div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery div img:hover {
+  transform: scale(1.05);
+}
+
+.friends-links {
+  text-align: center;
+  background-color: #b3e5fc;
+  border-top: 3px solid #0077b6;
+}
+
+.friends-links h3 {
+  margin-bottom: 20px;
+  color: #023e8a;
+}
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.link-box {
+  background-color: #81d4fa;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.link-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.link-box a {
+  color: #023e8a;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
 footer {
   background-color: #023e8a;
   color: white;
@@ -137,7 +183,6 @@ footer {
   margin-top: 20px;
 }
 
-/* === RESPONSYWNOŚĆ === */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -171,39 +216,13 @@ footer {
   .gallery div {
     width: 80%;
   }
-}
 
-/* === LINKI DO STRON KOLEGÓW === */
-.friends-links {
-  text-align: center;
-  background-color: #b3e5fc;
-  border-top: 3px solid #0077b6;
-}
+  .links-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.friends-links h3 {
-  margin-bottom: 15px;
-  color: #023e8a;
-}
-
-.links-container {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.links-container a {
-  display: inline-block;
-  background-color: #0077b6;
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: 0.3s ease;
-}
-
-.links-container a:hover {
-  background-color: #023e8a;
-  transform: scale(1.05);
+  .link-box {
+    width: 80%;
+  }
 }
