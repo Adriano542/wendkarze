@@ -1,9 +1,12 @@
-body {
-  font-family: Arial, sans-serif;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #b3e5fc; 
-  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #b3e5fc;
 }
 
 header {
@@ -27,21 +30,21 @@ header img.logo {
 nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px; 
+  gap: 40px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.2em; 
-  letter-spacing: 1px; 
+  font-size: 1.2em;
+  letter-spacing: 1px;
   transition: 0.3s;
 }
 
 nav a:hover {
   text-decoration: underline;
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 .section {
@@ -49,7 +52,6 @@ nav a:hover {
   width: 100%;
   padding: 40px 5%;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  box-sizing: border-box;
 }
 
 .main-content {
@@ -57,7 +59,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  flex-wrap: wrap; /* dzięki temu na mniejszych ekranach tekst spadnie pod zdjęcie */
+  flex-wrap: wrap;
 }
 
 .main-content img {
@@ -107,7 +109,7 @@ nav a:hover {
 
 .sprzet-item .box {
   width: 100%;
-  aspect-ratio: 1 / 1; 
+  aspect-ratio: 1 / 1;
   border: 2px solid #01579b;
   border-radius: 8px;
   background-color: #bbdefb;
