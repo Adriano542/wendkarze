@@ -5,6 +5,17 @@ body {
   background-color: #f4f4f4;
 }
 
+/* Rozciągnięcie strony na pełną szerokość */
+.section {
+  background-color: white;
+  margin: 10px 0;
+  width: 100%;
+  padding: 30px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+}
+
+/* Nagłówek */
 header {
   display: flex;
   align-items: center;
@@ -38,19 +49,11 @@ nav a:hover {
   text-decoration: underline;
 }
 
-.section {
-  background-color: white;
-  margin: 10px auto;
-  width: 90%;
-  max-width: 1000px;
-  padding: 20px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-}
-
 /* Sekcja główna */
 .main-content {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -59,11 +62,12 @@ nav a:hover {
   border-radius: 10px;
 }
 
-/* Nowy blok - sprzęt */
+/* Blok sprzętu */
 .sprzet {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .sprzet-item h3 {
@@ -71,18 +75,34 @@ nav a:hover {
 }
 
 .sprzet-item .box {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   border: 2px solid #000;
   margin: 0 auto;
   background-color: #f9f9f9;
-  border-radius: 5px;
+  border-radius: 8px;
+  overflow: hidden; /* obraz nie wyjdzie poza ramkę */
+}
+
+/* Obrazy wewnątrz ramek */
+.sprzet-item .box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* dopasowuje proporcje bez rozciągania */
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Efekt po najechaniu myszką */
+.sprzet-item .box img:hover {
+  transform: scale(1.05);
 }
 
 /* Galeria */
 .gallery {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   gap: 10px;
   margin: 20px 0;
 }
@@ -95,6 +115,7 @@ nav a:hover {
   border-radius: 10px;
 }
 
+/* Stopka */
 footer {
   background-color: #023e8a;
   color: white;
