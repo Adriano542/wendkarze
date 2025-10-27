@@ -1,28 +1,21 @@
+/* === OGÓLNE USTAWIENIA === */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-}
-
-/* Rozciągnięcie strony na pełną szerokość */
-.section {
-  background-color: white;
-  margin: 10px 0;
-  width: 100%;
-  padding: 30px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  background-color: #b3e5fc; /* błękitne tło */
   box-sizing: border-box;
 }
 
-/* Nagłówek */
+/* === NAGŁÓWEK === */
 header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap; /* pozwala elementom przechodzić do nowej linii */
   background-color: #0077b6;
   color: white;
-  padding: 10px 0;
+  padding: 15px 5%;
 }
 
 header img.logo {
@@ -35,6 +28,7 @@ header img.logo {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
 }
 
@@ -49,77 +43,167 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Sekcja główna */
+/* === SEKCJE === */
+.section {
+  background-color: #e1f5fe; /* jasny błękit */
+  width: 100%;
+  padding: 40px 5%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+}
+
+/* === SEKCJA GŁÓWNA === */
 .main-content {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* dzięki temu przy zwężaniu ekranu obraz i tekst ułożą się pionowo */
 }
 
 .main-content img {
-  width: 300px;
+  width: 100%;
+  max-width: 400px;
   border-radius: 10px;
+  flex: 1 1 300px;
 }
 
-/* Blok sprzętu */
+/* === BLOK SPRZĘTU === */
 .sprzet {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: flex-start;
   text-align: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* elementy ładnie się zawijają */
+  gap: 20px;
+}
+
+.sprzet-item {
+  flex: 1 1 250px; /* rośnie lub maleje w zależności od szerokości okna */
+  max-width: 300px;
 }
 
 .sprzet-item h3 {
   margin-bottom: 10px;
+  font-size: 1.2em;
 }
 
 .sprzet-item .box {
-  width: 160px;
-  height: 160px;
-  border: 2px solid #000;
-  margin: 0 auto;
-  background-color: #f9f9f9;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* kwadrat */
+  border: 2px solid #01579b;
   border-radius: 8px;
-  overflow: hidden; /* obraz nie wyjdzie poza ramkę */
+  background-color: #bbdefb;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Obrazy wewnątrz ramek */
 .sprzet-item .box img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* dopasowuje proporcje bez rozciągania */
+  object-fit: cover;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
 
-/* Efekt po najechaniu myszką */
 .sprzet-item .box img:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-/* Galeria */
+/* === GALERIA === */
 .gallery {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0;
+  gap: 20px;
 }
 
 .gallery div {
-  background-color: #e0f7fa;
-  width: 150px;
-  height: 100px;
+  background-color: #81d4fa;
+  width: 200px;
+  height: 120px;
   border: 2px solid #0077b6;
   border-radius: 10px;
 }
 
-/* Stopka */
+/* === STOPKA === */
 footer {
   background-color: #023e8a;
   color: white;
   text-align: center;
   padding: 15px 0;
   margin-top: 20px;
+}
+
+/* === RESPONSYWNOŚĆ === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-content img {
+    max-width: 90%;
+  }
+
+  .sprzet {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sprzet-item {
+    max-width: 90%;
+  }
+
+  .gallery div {
+    width: 80%;
+  }
+}
+
+/* === LINKI DO STRON KOLEGÓW === */
+.friends-links {
+  text-align: center;
+  background-color: #b3e5fc;
+  border-top: 3px solid #0077b6;
+}
+
+.friends-links h3 {
+  margin-bottom: 15px;
+  color: #023e8a;
+}
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.links-container a {
+  display: inline-block;
+  background-color: #0077b6;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.links-container a:hover {
+  background-color: #023e8a;
+  transform: scale(1.05);
 }
